@@ -1,17 +1,18 @@
 /*
   Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 */
+class Key {
+  private signature: string;
 
-class Component {
-  constructor (public props:T) {
-
+  setSignature(signature: string) {
+    this.signature = signature;
   }
 }
 
-class Page extends Component {
-  pageInfo () {
-    console.log(this.props.title);
+class Person {
+  private key: Key = new Key();
+
+  setKeySignature(signature: string) {
+    this.key.setSignature(signature);
   }
 }
-
-export {};

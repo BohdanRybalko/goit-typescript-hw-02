@@ -1,5 +1,7 @@
-let anything = -20;
-anything = 'Text';
-anything = {};
+function flexibleVariable<T>(value: T): T {
+  return value;
+}
 
-export {};
+let result: number | string | object = flexibleVariable(-20);
+result = flexibleVariable('Text');
+result = flexibleVariable({});
