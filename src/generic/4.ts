@@ -1,18 +1,21 @@
 /*
   Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 */
-class Key {
-  private signature: string;
+interface ComponentProps {
+ 
+}
 
-  setSignature(signature: string) {
-    this.signature = signature;
+class Component<T extends ComponentProps> {
+  constructor(public props: T) {
   }
 }
 
-class Person {
-  private key: Key = new Key();
+interface PageProps extends ComponentProps {
+  title: string;
+}
 
-  setKeySignature(signature: string) {
-    this.key.setSignature(signature);
+class Page extends Component<PageProps> {
+  pageInfo() {
+    console.log(this.props.title);
   }
 }
